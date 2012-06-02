@@ -16,8 +16,8 @@ public class BaseActivity extends SimpleBaseGameActivity {
 	// Singleton for the game scenario
 	public Scene mCurrentScene;
 	public static BaseActivity instance;
-	static final int CAMERA_WIDTH = 800;
-	static final int CAMERA_HEIGHT = 480;
+	static final int CAMERA_WIDTH = 480;
+	static final int CAMERA_HEIGHT = 800;
 	public static final float MAX_CHARGE_DISTANCE = 80;
 	public Camera mCamera;
 	public Font mFont;
@@ -25,7 +25,7 @@ public class BaseActivity extends SimpleBaseGameActivity {
 	public EngineOptions onCreateEngineOptions() {
 		instance = this;
 		mCamera = new Camera(0, 0, CAMERA_WIDTH, CAMERA_HEIGHT);
-		return new EngineOptions(true, ScreenOrientation.LANDSCAPE_SENSOR,
+		return new EngineOptions(true, ScreenOrientation.PORTRAIT_SENSOR,
 				new RatioResolutionPolicy(CAMERA_WIDTH, CAMERA_HEIGHT), mCamera);
 	}
 
