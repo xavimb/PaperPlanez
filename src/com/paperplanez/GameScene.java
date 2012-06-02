@@ -6,10 +6,14 @@ import org.andengine.entity.scene.Scene;
 import org.andengine.entity.scene.background.Background;
 import org.andengine.input.touch.TouchEvent;
 
+import android.hardware.SensorManager;
+
 public class GameScene extends Scene implements IOnSceneTouchListener 
 {
 	public Plane plane;
 	Camera mCamera;
+	SensorManager sensorManager;
+	public float accelerometerSpeedX;
 
 	public boolean onSceneTouchEvent(Scene pScene, TouchEvent pSceneTouchEvent) {
 		// TODO Auto-generated method stub
