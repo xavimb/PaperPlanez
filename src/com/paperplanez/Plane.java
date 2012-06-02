@@ -20,7 +20,7 @@ public class Plane {
 	public Plane()
 	{
 		sprite = new Sprite(0, 0, BaseActivity.getSharedInstance().mPlayerTextureRegion, BaseActivity.getSharedInstance().getVertexBufferObjectManager());
-		Camera mCamera = BaseActivity.getSharedInstance().mCamera;
+		mCamera = BaseActivity.getSharedInstance().mCamera;
 		
 		sprite.setPosition(mCamera.getWidth() / 2 - sprite.getWidth() / 2,
 				mCamera.getHeight() - sprite.getHeight() - 10);
@@ -33,12 +33,9 @@ public class Plane {
 		int rightBorder = (int) (mCamera.getWidth() - sprite.getWidth());
 		float newX;
 		
-		if (!movable)
-			return;
-		
 		if (accelerometerSpeedX != 0)
 		{
-			newX = sprite.getX() + accelerometerSpeedX;
+			newX = sprite.getX() - accelerometerSpeedX;
 			if (newX < leftBorder)
 				newX = leftBorder;
 			if (newX > rightBorder)

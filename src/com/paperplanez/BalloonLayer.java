@@ -30,11 +30,11 @@ public class BalloonLayer extends Entity {
 
 	public void purge() {
 
-		detachChildren();
+		/*detachChildren();
 		for (Balloon e : balloons) {
 			BalloonPool.sharedBalloonPool().recyclePoolItem(e);
 		}
-		balloons.clear();
+		balloons.clear();*/
 	}
 
 	public BalloonLayer(int x) {
