@@ -17,7 +17,7 @@ public class GameScene extends Scene implements IOnSceneTouchListener
 	}
 	public GameScene()
 	{
-		setBackground(new Background(0.2f, 0.2f, 0.2f));
+		setBackground(new Background(0.7f, 0.7f, 0.7f));
 		mCamera = BaseActivity.getSharedInstance().mCamera;
 		plane = Plane.getSharedInstance();
 		plane.sprite.detachSelf();
