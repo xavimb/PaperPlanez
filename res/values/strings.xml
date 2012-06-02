@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">Hello World, PaperPlanezActivity!</string>
+    <string name="hello">Android Aalto Hackathon!</string>
     <string name="app_name">PaperPlanez</string>
+    <string name="play">Play!</string>
+    <string name="exit">Bye bye!</string>
 
 </resources>
