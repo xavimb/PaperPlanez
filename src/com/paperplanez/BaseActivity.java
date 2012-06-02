@@ -8,6 +8,9 @@ import org.andengine.entity.scene.Scene;
 import org.andengine.entity.util.FPSLogger;
 import org.andengine.opengl.font.Font;
 import org.andengine.opengl.font.FontFactory;
+import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlas;
+import org.andengine.opengl.texture.atlas.bitmap.BitmapTextureAtlasTextureRegionFactory;
+import org.andengine.opengl.texture.region.TextureRegion;
 import org.andengine.ui.activity.SimpleBaseGameActivity;
 
 import android.graphics.Typeface;
@@ -21,6 +24,9 @@ public class BaseActivity extends SimpleBaseGameActivity {
 	public static final float MAX_CHARGE_DISTANCE = 80;
 	public Camera mCamera;
 	public Font mFont;
+	
+    private BitmapTextureAtlas mBitmapTextureAtlas;
+    private TextureRegion mPlayerTextureRegion;
 
 	public EngineOptions onCreateEngineOptions() {
 		instance = this;
@@ -34,6 +40,9 @@ public class BaseActivity extends SimpleBaseGameActivity {
 				this.getTextureManager(), 256, 256,
 				Typeface.create(Typeface.DEFAULT, Typeface.BOLD), 32);
 		mFont.load();
+	    mBitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 32, 32);
+	    mPlayerTextureRegion = BitmapTextureAtlasTextureRegionFactory.createFromAsset(this.mBitmapTextureAtlas, this, "airplane.png", 0, 0);
+	    mBitmapTextureAtlas.load();
 	}
 
 	protected Scene onCreateScene() {
