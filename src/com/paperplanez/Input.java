@@ -30,7 +30,6 @@ public class Input implements SensorEventListener  {
 	public void onAccuracyChanged(Sensor sensor, int accuracy) {
 
 	}
-
 	
 	public void onSensorChanged(SensorEvent event) {
 		synchronized (this) {
