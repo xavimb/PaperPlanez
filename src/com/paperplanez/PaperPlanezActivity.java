@@ -9,6 +9,6 @@ public class PaperPlanezActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-        System.out.println("esto lo peta!");
+        System.out.println("esto lo peta chacho!");
     }
 }
