@@ -40,7 +40,7 @@ public class BaseActivity extends SimpleBaseGameActivity {
 				this.getTextureManager(), 256, 256,
 				Typeface.create(Typeface.DEFAULT, Typeface.BOLD), 32);
 		mFont.load();
-	    mBitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 80, 50);
+	    mBitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 200, 120);
 	    mPlayerTextureRegion = BitmapTextureAtlasTextureRegionFactory.createFromAsset(this.mBitmapTextureAtlas, this, "airplaneStill.png", 0, 0);
 	    mBitmapTextureAtlas.load();
 	}
