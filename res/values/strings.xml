@@ -3,7 +3,8 @@
 
     <string name="hello">Android Aalto Hackathon!</string>
     <string name="app_name">PaperPlanez</string>
-    <string name="play">Play!</string>
-    <string name="exit">Bye bye!</string>
+    <string name="start">Start</string>
+    <string name="title_1">Paper</string>
+    <string name="title_2">Planez</string>
 
 </resources>
