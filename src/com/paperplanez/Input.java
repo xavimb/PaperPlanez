@@ -1,49 +1,49 @@
 package com.paperplanez;
+
 import android.hardware.SensorEventListener;
 import android.hardware.SensorManager;
 import android.app.Activity;
 import android.hardware.Sensor;
 import android.hardware.SensorEvent;
+import android.hardware.SensorEventListener;
 import android.os.Bundle;
 
 
 
-public class Input extends Activity implements SensorEventListener  {
+public class Input implements SensorEventListener  {
 
-	private SensorManager sensorManager;
+	static Input instance;
+	GameScene scene;
 	public float pos;
 	
-	@Override
-	public void onCreate(Bundle savedInstanceState){
-		super.onCreate(savedInstanceState);
-				
-		sensorManager=(SensorManager)getSystemService(SENSOR_SERVICE);
-		// add listener. The listener will be HelloAndroid (this) class
-		sensorManager.registerListener(this,
-				sensorManager.getDefaultSensor(Sensor.TYPE_GYROSCOPE),
-				SensorManager.SENSOR_DELAY_GAME);
-	
+	public static Input getSharedInstance() {
+		if (instance == null)
+			instance = new Input();
+		return instance;
 	}
+
+	private Input() {
+		instance = this;
+		scene = (GameScene) BaseActivity.getSharedInstance().mCurrentScene;
+	}
+
+	public void onAccuracyChanged(Sensor sensor, int accuracy) {
+
+	}
+
 	
-	public void onSensorChanged(SensorEvent event){
-
-		// check sensor type
-		if(event.sensor.getType()==Sensor.TYPE_GYROSCOPE){
-
-			// assign directions
-			//float x=event.values[0];
-			pos = event.values[1];
-			//float z=event.values[2];
-
-			
+	public void onSensorChanged(SensorEvent event) {
+		synchronized (this) {
+			switch (event.sensor.getType()) {
+			case Sensor.TYPE_ACCELEROMETER:
+				// Log.v("Jimvaders",
+				// "SensorListener onSensorChanged() accelerometerSpeedX = "+event.values[1]);
+				pos = event.values[1];
+				break;
+			default:
+				break;
+			}
 		}
-	
-	
-	
-	}
 
-	public void onAccuracyChanged(Sensor arg0, int arg1) {
-		// TODO Auto-generated method stub
-		
 	}
 }
