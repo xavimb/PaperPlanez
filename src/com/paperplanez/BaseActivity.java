@@ -25,8 +25,8 @@ public class BaseActivity extends SimpleBaseGameActivity {
 	public Camera mCamera;
 	public Font mFont;
 	
-    private BitmapTextureAtlas mBitmapTextureAtlas;
-    private TextureRegion mPlayerTextureRegion;
+    public BitmapTextureAtlas mBitmapTextureAtlas;
+    public TextureRegion mPlayerTextureRegion;
 
 	public EngineOptions onCreateEngineOptions() {
 		instance = this;
@@ -40,8 +40,8 @@ public class BaseActivity extends SimpleBaseGameActivity {
 				this.getTextureManager(), 256, 256,
 				Typeface.create(Typeface.DEFAULT, Typeface.BOLD), 32);
 		mFont.load();
-	    mBitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 32, 32);
-	    mPlayerTextureRegion = BitmapTextureAtlasTextureRegionFactory.createFromAsset(this.mBitmapTextureAtlas, this, "airplane.png", 0, 0);
+	    mBitmapTextureAtlas = new BitmapTextureAtlas(this.getTextureManager(), 200, 120);
+	    mPlayerTextureRegion = BitmapTextureAtlasTextureRegionFactory.createFromAsset(this.mBitmapTextureAtlas, this, "airplaneStill.png", 0, 0);
 	    mBitmapTextureAtlas.load();
 	}
 
