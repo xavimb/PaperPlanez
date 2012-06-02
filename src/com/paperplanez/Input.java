@@ -12,7 +12,7 @@ public class Input extends Activity implements SensorEventListener  {
 
 	private SensorManager sensorManager;
 	public float pos;
-	
+	 
 	@Override
 	public void onCreate(Bundle savedInstanceState){
 		super.onCreate(savedInstanceState);
